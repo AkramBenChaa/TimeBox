@@ -1,0 +1,65 @@
+:root {
+    --background-image: url(./bacground.jpg);
+    --padding: 20px;
+    --background-color: rgba(255, 255, 255, 0.234);
+    --border: 1px white solid;
+    --border-radius: 40px;
+    --font-size: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+body {
+    height: 98vh;
+    background-image: var(--background-image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Bottom buttons: */
+.timerType {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    background-color: var(--background-color);
+    width: 800px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+}
+
+/* Bottom: */
+.type {
+    flex: 1;
+    padding: 15px;
+    margin: 10px;
+    border: var(--border);
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size);
+    font-weight: bolder;
+    transition: 0.2s;
+    color: black;
+    cursor: pointer;
+}
+
+/* Bottom Hover: */
+.type:hover {
+    transform: scale(1.04);
+    background-color: rgba(94, 103, 147, 0.422);
+    color: white;
+}
+
+/* Side Bar:  */
+nav {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+}
