@@ -2,8 +2,8 @@
     --background-image: url(./bacground.jpg);
     --padding: 20px;
     --background-color: rgba(255, 255, 255, 0.234);
-    --border: 1px white solid;
-    --border-radius: 40px;
+    --border: 1px rgba(255, 255, 255, 0.282) solid;
+    --border-radius: 20px;
     --font-size: 20px;
 }
 
@@ -31,6 +31,7 @@ body {
     background-color: var(--background-color);
     width: 800px;
     border: var(--border);
+    backdrop-filter: blur(4px);
     border-radius: var(--border-radius);
 }
 
@@ -39,10 +40,12 @@ body {
     flex: 1;
     padding: 15px;
     margin: 10px;
-    border: var(--border);
-    background-color: var(--background-color);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size);
+    /* border: var(--border); */
+    border: none;
+    background-color: #eeeeee00;
+    /* background-color: var(--background-color); */
+    /* border-radius: var(--border-radius); */
+    font-size: 20px;
     font-weight: bolder;
     transition: 0.2s;
     color: black;
@@ -51,15 +54,43 @@ body {
 
 /* Bottom Hover: */
 .type:hover {
-    transform: scale(1.04);
-    background-color: rgba(94, 103, 147, 0.422);
-    color: white;
+    color: rgb(5, 47, 145);
 }
 
 /* Side Bar:  */
+
 nav {
-    background-color: aqua;
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
+    width: fit-content;
+    display: flex;
+    border-radius: 20px;
+    padding: 5px;
+    border: var(--border);
+    backdrop-filter: blur(4px);
+}
+
+.navType {
+    flex: 1;
+    background-color: rgba(255, 0, 0, 0);
+    /* background-color: var(--background-color); */
     width: 80px;
+    height: 80px;
+    border: none;
+    margin: 5px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: bolder;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.navType:hover {
+    transform: scale(1.04);
+    color: white;
 }
