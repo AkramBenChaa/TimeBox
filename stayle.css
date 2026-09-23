@@ -1,15 +1,16 @@
 :root {
-    --background-image: url(./bacground.jpg);
+    --background-image: url(./massimiliano-morosinotto-EVIo-3PDxg8-unsplash.jpg);
     --padding: 20px;
-    --background-color: rgba(255, 255, 255, 0.234);
+    --background-color: rgba(152, 145, 145, 0.454);
     --border: 1px rgba(255, 255, 255, 0.282) solid;
-    --border-radius: 20px;
+    --border-radius: 30px;
     --font-size: 20px;
 }
 
 * {
     box-sizing: border-box;
-    font-family: Georgia, Times, "Times New Roman", serif;
+    /* font-family: Georgia, Times, "Times New Roman", serif; */
+    font-family: Verdana, sans-serif;
 }
 
 body {
@@ -29,9 +30,9 @@ body {
     display: flex;
     justify-content: center;
     background-color: var(--background-color);
-    width: 800px;
+    width: 600px;
     border: var(--border);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(3px);
     border-radius: var(--border-radius);
 }
 
@@ -39,13 +40,13 @@ body {
 .type {
     flex: 1;
     padding: 15px;
-    margin: 10px;
+    margin: 10px 0;
     /* border: var(--border); */
     border: none;
     background-color: #eeeeee00;
     /* background-color: var(--background-color); */
     /* border-radius: var(--border-radius); */
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bolder;
     transition: 0.2s;
     color: black;
@@ -54,7 +55,7 @@ body {
 
 /* Bottom Hover: */
 .type:hover {
-    color: rgb(5, 47, 145);
+    color: rgb(255, 255, 253);
 }
 
 /* Side Bar:  */
@@ -79,18 +80,60 @@ nav {
     flex: 1;
     background-color: rgba(255, 0, 0, 0);
     /* background-color: var(--background-color); */
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border: none;
-    margin: 5px;
+    margin: 15px 2px;
     color: rgb(0, 0, 0);
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bolder;
-    transition: 0.3s;
+    transition: 0.5s;
     cursor: pointer;
 }
 
 .navType:hover {
     transform: scale(1.04);
     color: white;
+}
+
+.timer {
+    font-size: 300px;
+    color: rgb(0, 0, 0);
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    width: 800px;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.timer div {
+    display: flex;
+    flex-direction: column;
+}
+
+.timer div button {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-radius: 50%;
+    margin-bottom: 2px;
+    margin-top: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    width: 60px;
+    height: 60px;
+}
+
+.timer div button:hover {
+    transform: scale(1.2);
+}
+
+img {
+    width: 40px;
+    height: 40px;
 }
