@@ -1,15 +1,17 @@
+/* Basic settings: */
 :root {
-    --background-image: url(./massimiliano-morosinotto-EVIo-3PDxg8-unsplash.jpg);
+    --background-image: url(./imgs/19.jpg);
     --padding: 20px;
     --background-color: rgba(152, 145, 145, 0.454);
     --border: 1px rgba(255, 255, 255, 0.282) solid;
     --border-radius: 30px;
     --font-size: 20px;
+    --blur: blur(3px);
+    --img: 40px;
 }
 
 * {
     box-sizing: border-box;
-    /* font-family: Georgia, Times, "Times New Roman", serif; */
     font-family: Verdana, sans-serif;
 }
 
@@ -21,94 +23,86 @@ body {
     background-size: cover;
 }
 
-/* Bottom buttons: */
-.timerType {
-    position: fixed;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+/* Bottom menu formats: */
+.timer_type {
     display: flex;
+    transform: translateX(-50%);
     justify-content: center;
-    background-color: var(--background-color);
+    position: fixed;
+    left: 50%;
+    bottom: 40px;
     width: 600px;
+    background-color: var(--background-color);
     border: var(--border);
-    backdrop-filter: blur(3px);
+    backdrop-filter: var(--blur);
     border-radius: var(--border-radius);
 }
 
-/* Bottom: */
 .type {
     flex: 1;
     padding: 15px;
     margin: 10px 0;
-    /* border: var(--border); */
-    border: none;
     background-color: #eeeeee00;
-    /* background-color: var(--background-color); */
-    /* border-radius: var(--border-radius); */
+    color: black;
+    border: none;
     font-size: 15px;
     font-weight: bolder;
-    transition: 0.2s;
-    color: black;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Bottom Hover: */
 .type:hover {
     color: rgb(255, 255, 253);
 }
 
-/* Side Bar:  */
-
+/* Sidebar Formats: */
 nav {
+    display: flex;
+    flex-direction: column;
     position: fixed;
+    width: fit-content;
     top: 50%;
     left: 20px;
     transform: translateY(-50%);
-    background-color: var(--background-color);
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    display: flex;
-    border-radius: 20px;
     padding: 5px;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
     border: var(--border);
-    backdrop-filter: blur(4px);
+    backdrop-filter: var(--blur);
 }
 
 .navType {
     flex: 1;
-    background-color: rgba(255, 0, 0, 0);
-    /* background-color: var(--background-color); */
     width: 60px;
     height: 60px;
     border: none;
     margin: 15px 2px;
+    background-color: rgba(255, 0, 0, 0);
     color: rgb(0, 0, 0);
     font-size: 15px;
     font-weight: bolder;
-    transition: 0.5s;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .navType:hover {
-    transform: scale(1.04);
+    transform: scale(1.1);
     color: white;
 }
 
+/* Timer formats: */
 .timer {
-    font-size: 300px;
-    color: rgb(0, 0, 0);
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    width: 800px;
-    transform: translate(-50%, -50%);
-
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
     gap: 10px;
+    font-size: 300px;
+    color: rgb(0, 0, 0);
 }
 
 .timer div {
@@ -116,24 +110,22 @@ nav {
     flex-direction: column;
 }
 
-.timer div button {
+.timer_icons {
     background-color: rgba(255, 255, 255, 0);
-    border: none;
-    border-radius: 50%;
-    margin-bottom: 2px;
-    margin-top: 20px;
+    /* width: 160px; */
+    /* height: 60px; */
     padding: 10px;
+    border: none;
+    margin-top: 20px;
     cursor: pointer;
     transition: 0.5s;
-    width: 60px;
-    height: 60px;
 }
 
-.timer div button:hover {
+.timer_icons:hover {
     transform: scale(1.2);
 }
 
 img {
-    width: 40px;
-    height: 40px;
+    width: var(--img);
+    height: var(--img);
 }
