@@ -3,7 +3,7 @@ let types = document.querySelectorAll(".type");
 let pause = document.getElementById("pause");
 let start = false;
 let icon = document.getElementById("img");
-
+let sound = new Audio("./sounds/time_end_sound.mp3");
 // Start timer:
 let totalSeconds = 25 * 60;
 let timer;
@@ -38,6 +38,7 @@ pause.addEventListener("click", function () {
                 totalSeconds--;
                 updateDislpay();
                 if (totalSeconds === 0) {
+                    sound.play();
                     clearInterval(timer);
                     start = false;
                     icon.src = "./icons/pause_icon.png";
