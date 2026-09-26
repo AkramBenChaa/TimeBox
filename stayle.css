@@ -101,7 +101,7 @@ nav {
     transform: translate(-50%, -50%);
     width: fit-content;
     gap: 10px;
-    font-size: 300px;
+    font-size: 250px;
     color: rgb(0, 0, 0);
 }
 
@@ -128,4 +128,8 @@ nav {
 img {
     width: var(--img);
     height: var(--img);
+}
+
+.onclick_class {
+    color: white;
 }

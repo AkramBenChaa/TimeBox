@@ -4,7 +4,8 @@ let pause = document.getElementById("pause");
 let start = false;
 let icon = document.getElementById("img");
 let sound = new Audio("./sounds/time_end_sound.mp3");
-let clickSound = new Audio("./sounds/click_sound.wav");
+let timeTypeSound = new Audio("./sounds/time_type_sound.wav");
+let clickSound = new Audio("./sounds/click_sound (2).wav");
 let replay = document.getElementById("replay");
 let thisType = 25 * 60;
 
@@ -22,6 +23,8 @@ function updateDislpay() {
 // Change Time Type In Display:
 types.forEach(function (type) {
     type.addEventListener("click", function () {
+        timeTypeSound.play();
+        timeTypeSound.currentTime = 0;
         totalSeconds = Number(type.dataset.time) * 60;
         thisType = type;
         updateDislpay();
@@ -39,11 +42,13 @@ pause.addEventListener("click", function () {
             start = true;
             icon.src = "./icons/pause_icon.png";
             clickSound.play();
+            clickSound.currentTime = 0;
             timer = setInterval(function () {
                 totalSeconds--;
                 updateDislpay();
                 if (totalSeconds === 0) {
                     sound.play();
+                    time.className = "onclick_class";
                     clearInterval(timer);
                     start = false;
                     icon.src = "./icons/pause_icon.png";
@@ -55,6 +60,7 @@ pause.addEventListener("click", function () {
         clearInterval(timer);
         icon.src = "./icons/play_icon.png";
         clickSound.play();
+        clickSound.currentTime = 0;
     }
 });
 
@@ -71,4 +77,5 @@ replay.addEventListener("click", function () {
     start = false;
     icon.src = "./icons/play_icon.png";
     clickSound.play();
+    clickSound.currentTime = 0;
 });
