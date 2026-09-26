@@ -6,7 +6,7 @@ let icon = document.getElementById("img");
 let sound = new Audio("./sounds/time_end_sound.mp3");
 let clickSound = new Audio("./sounds/click_sound.wav");
 let replay = document.getElementById("replay");
-let thisType;
+let thisType = 25 * 60;
 
 // Start timer:
 let totalSeconds = 25 * 60;
@@ -61,7 +61,12 @@ pause.addEventListener("click", function () {
 // Replay Button:
 replay.addEventListener("click", function () {
     clearInterval(timer);
-    totalSeconds = Number(thisType.dataset.time) * 60;
+    console.log(thisType);
+    if (thisType === 1500) {
+        totalSeconds = 25 * 60;
+    } else {
+        totalSeconds = Number(thisType.dataset.time) * 60;
+    }
     updateDislpay();
     start = false;
     icon.src = "./icons/play_icon.png";
