@@ -4,6 +4,10 @@ let pause = document.getElementById("pause");
 let start = false;
 let icon = document.getElementById("img");
 let sound = new Audio("./sounds/time_end_sound.mp3");
+let clickSound = new Audio("./sounds/click_sound.wav");
+let replay = document.getElementById("replay");
+let thisType;
+
 // Start timer:
 let totalSeconds = 25 * 60;
 let timer;
@@ -19,6 +23,7 @@ function updateDislpay() {
 types.forEach(function (type) {
     type.addEventListener("click", function () {
         totalSeconds = Number(type.dataset.time) * 60;
+        thisType = type;
         updateDislpay();
         start = false;
         clearInterval(timer);
@@ -28,12 +33,12 @@ types.forEach(function (type) {
 
 // Start Taming:
 pause.addEventListener("click", function () {
+    clickSound.play();
     if (start === false) {
         if (totalSeconds > 0) {
             start = true;
-
             icon.src = "./icons/pause_icon.png";
-
+            clickSound.play();
             timer = setInterval(function () {
                 totalSeconds--;
                 updateDislpay();
@@ -49,5 +54,16 @@ pause.addEventListener("click", function () {
         start = false;
         clearInterval(timer);
         icon.src = "./icons/play_icon.png";
+        clickSound.play();
     }
+});
+
+// Replay Button:
+replay.addEventListener("click", function () {
+    clearInterval(timer);
+    totalSeconds = Number(thisType.dataset.time) * 60;
+    updateDislpay();
+    start = false;
+    icon.src = "./icons/play_icon.png";
+    clickSound.play();
 });
