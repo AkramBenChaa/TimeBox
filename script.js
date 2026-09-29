@@ -9,8 +9,11 @@ let nav = document.querySelectorAll(".navType");
 let timeTypeSound = new Audio("./sounds/time_type_sound.wav");
 let sound = new Audio("./sounds/time_end_sound.mp3");
 let clickSound = new Audio("./sounds/click_sound (2).wav");
+let rain = new Audio("./sounds/rain_sound.mp3");
+let fire = new Audio("./sounds/fire_sound.mp3");
 
 let start = false;
+let numberOfSound = 1;
 let thisType = focus;
 let totalSeconds = 25 * 60;
 let timer;
@@ -107,24 +110,23 @@ nav.forEach(function (item) {
     item.addEventListener("click", function () {
         switch (this.id) {
             case "btn-goal":
-                console.log("تم اختيار قسم الأهداف");
+                goalButton();
                 break;
 
             case "btn-sound":
-                console.log("تم اختيار قسم الصوتيات");
+                startSound();
                 break;
 
             case "btn-img":
                 changeBackground();
-                console.log("تم اختيار قسم الصور");
                 break;
 
             case "btn-note":
-                console.log("تم اختيار قسم الملاحظات");
+                noteButton();
                 break;
 
             case "btn-ai":
-                console.log("تم اختيار قسم الذكاء الاصطناعي");
+                aiButton();
                 break;
 
             default:
@@ -143,4 +145,57 @@ function changeBackground() {
         imageNumber = 1;
         document.body.style.backgroundImage = `url(./imgs/${imageNumber}.jpg)`;
     }
+}
+
+// Sound Function:
+function startSound() {
+    switch (numberOfSound) {
+        case 1:
+            rain.currentTime = 0;
+            rain.loop = true;
+            rain.play();
+            numberOfSound++;
+            break;
+        case 2:
+            rain.pause();
+            fire.currentTime = 0;
+            fire.loop = true;
+            fire.play();
+            numberOfSound++;
+            break;
+        case 3:
+            fire.pause();
+            numberOfSound = 1;
+            break;
+    }
+}
+
+// AI Button:
+function aiButton() {
+    Swal.fire({
+        title: "Coming Soon",
+        text: "The AI feature is currently under development.",
+        icon: "info",
+        confirmButtonText: "OK",
+    });
+}
+
+// Goal Boutton:
+function goalButton() {
+    Swal.fire({
+        title: "Coming Soon",
+        text: "The Goal feature is currently under development.",
+        icon: "info",
+        confirmButtonText: "OK",
+    });
+}
+
+// Note Boutton:
+function noteButton() {
+    Swal.fire({
+        title: "Coming Soon",
+        text: "The Note feature is currently under development.",
+        icon: "info",
+        confirmButtonText: "OK",
+    });
 }
