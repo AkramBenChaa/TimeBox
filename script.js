@@ -41,6 +41,7 @@ function updateDislpay() {
 // Change Time Type In Display:
 types.forEach(function (type) {
     type.addEventListener("click", function () {
+        // type.className.remove = "clickType";
         timeTypeSound.play();
         timeTypeSound.currentTime = 0;
         clearInterval(timer);
@@ -48,6 +49,10 @@ types.forEach(function (type) {
         thisType = type;
         start = false;
         icon.src = "./icons/play_icon.png";
+        types.forEach(function (type) {
+            type.classList.remove("clickType");
+        });
+        type.classList.toggle("clickType");
         updateDislpay();
     });
 });

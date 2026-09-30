@@ -3,8 +3,8 @@
     --background-image: url(./imgs/1.jpg);
     --padding: 20px;
     --background-color: rgba(152, 145, 145, 0.454);
-    --border: 1px rgba(255, 255, 255, 0.282) solid;
-    --border-radius: 50px;
+    --border: 1px rgba(255, 255, 255, 0.082) solid;
+    --border-radius: 40px;
     --font-size: 20px;
     --blur: blur(3px);
     --img: 40px;
@@ -44,6 +44,7 @@ body {
     margin: 10px 0;
     background-color: #eeeeee00;
     color: black;
+
     border: none;
     font-size: 15px;
     font-weight: bolder;
@@ -132,4 +133,180 @@ img {
 
 .onclick_class {
     color: white;
+}
+
+.clickType {
+    color: white;
+}
+
+@media (max-width: 450px) {
+    :root {
+        --padding: 10px;
+        --font-size: 10px;
+        --img: 30px;
+    }
+    .timer_type {
+        width: 90%;
+        height: 50px;
+        display: flex;
+        transform: translateX(-50%);
+        justify-content: center;
+        position: fixed;
+        left: 50%;
+        bottom: 20px;
+    }
+    .type {
+        font-size: 10px;
+        padding: 5px;
+    }
+    nav {
+        display: flex;
+        flex-direction: row;
+        transform: translateX(-50%);
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 50px;
+        position: fixed;
+        left: 50%;
+        top: 10px;
+        padding: 1px;
+    }
+    .navType {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 2px;
+        font-size: 5px;
+    }
+    .timer {
+        width: fit-content;
+        gap: 5px;
+        font-size: 70px;
+    }
+    .timer_icons {
+        padding: 2px;
+        margin-top: 2px;
+    }
+}
+@media (max-width: 768px) {
+    :root {
+        --padding: 10px;
+        --font-size: 12px;
+        --img: 30px;
+        --border-radius: 25px;
+    }
+
+    .timer_type {
+        width: 340px;
+        max-width: 92%;
+        bottom: 20px;
+        padding: 0 5px;
+    }
+
+    .type {
+        font-size: 12px;
+        padding: 10px 4px;
+        margin: 5px 0;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 340px;
+        max-width: 92%;
+        height: auto;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 5px;
+    }
+
+    .navType {
+        width: auto;
+        height: 45px;
+        margin: 0;
+        font-size: 11px;
+    }
+
+    .navType:hover {
+        transform: none;
+    }
+
+    .timer {
+        top: 45%;
+        gap: 5px;
+        font-size: 90px;
+    }
+
+    .timer_icons {
+        padding: 5px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .timer {
+        font-size: 75px;
+    }
+
+    .type {
+        font-size: 10px;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    :root {
+        --img: 26px;
+        --border-radius: 20px;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 400px;
+        max-width: 80%;
+        height: auto;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 2px 5px;
+    }
+
+    .navType {
+        width: auto;
+        height: 36px;
+        margin: 0 4px;
+        font-size: 11px;
+    }
+
+    .navType:hover {
+        transform: none;
+    }
+
+    .timer_type {
+        width: 420px;
+        max-width: 80%;
+        bottom: 8px;
+    }
+
+    .type {
+        font-size: 12px;
+        padding: 8px 4px;
+        margin: 3px 0;
+    }
+
+    .timer {
+        top: 50%;
+        gap: 8px;
+        font-size: 100px;
+    }
+
+    .timer_icons {
+        padding: 4px;
+        margin-top: 0;
+    }
 }
