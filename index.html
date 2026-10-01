@@ -4,27 +4,28 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>TimeBox</title>
-        <link rel="stylesheet" href="./stayle.css" />
+        <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
         <!-- Timer -->
         <div class="timer">
             <span id="time">25:00</span>
+            <!-- Start, Stop, and Restart buttons -->
             <div>
-                <button class="timer_icons" id="pause"><img id="img" src="./icons/play_icon.png" /></button>
-                <button class="timer_icons" id="replay"><img src="./icons/replay_icon-50.png" /></button>
+                <button class="timer_icons" id="pause"><img id="img" src="./icons/play_icon.png" alt="puse" /></button>
+                <button class="timer_icons" id="replay"><img src="./icons/replay_icon.png" alt="replay" /></button>
             </div>
         </div>
 
-        <!-- Bottom buttons -->
+        <!-- Select a time type -->
         <div class="timer_type">
             <button class="type" id="this_is_focus" data-time="25">Focus</button>
             <button class="type" data-time="05">Short Break</button>
             <button class="type" data-time="15">Long Break</button>
-            <button class="type" data-time="00">Timer</button>
+            <button class="type" data-time="00">Stopwatch</button>
         </div>
 
-        <!-- Side buttons -->
+        <!-- Side upright -->
         <nav>
             <button id="btn-goal" class="navType"><img src="./icons/goal_icon.png" alt="Goale" />Goale</button>
             <button id="btn-sound" class="navType"><img src="./icons/sound_icon.png" alt="Sound" />Sound</button>
@@ -33,7 +34,7 @@
             <button id="btn-ai" class="navType"><img src="./icons/ai_icon.png" alt="AI" />Ai</button>
         </nav>
 
-        <script src="./script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="./script.js"></script>
     </body>
 </html>

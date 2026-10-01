@@ -1,15 +1,16 @@
 /* Basic settings: */
 :root {
-    --background-image: url(./imgs/1.jpg);
+    --background-image: url(./imgs/10.jpg);
     --padding: 20px;
     --background-color: rgba(152, 145, 145, 0.454);
     --border: 1px rgba(255, 255, 255, 0.082) solid;
     --border-radius: 40px;
-    --font-size: 20px;
+    --font-size: 15px;
     --blur: blur(3px);
     --img: 40px;
 }
 
+/* All Page: */
 * {
     box-sizing: border-box;
     font-family: Verdana, sans-serif;
@@ -23,7 +24,7 @@ body {
     background-size: cover;
 }
 
-/* Bottom menu formats: */
+/* Bottom Menu Formats: */
 .timer_type {
     display: flex;
     transform: translateX(-50%);
@@ -38,15 +39,15 @@ body {
     border-radius: var(--border-radius);
 }
 
+/* Time Type Formats: */
 .type {
     flex: 1;
     padding: 15px;
     margin: 10px 0;
     background-color: #eeeeee00;
     color: black;
-
     border: none;
-    font-size: 15px;
+    font-size: var(--font-size);
     font-weight: bolder;
     cursor: pointer;
     transition: 0.3s;
@@ -56,7 +57,7 @@ body {
     color: rgb(255, 255, 253);
 }
 
-/* Sidebar Formats: */
+/* Side Bar Formats: */
 nav {
     display: flex;
     flex-direction: column;
@@ -72,6 +73,7 @@ nav {
     backdrop-filter: var(--blur);
 }
 
+/* Nav Bar Icons Formats: */
 .navType {
     flex: 1;
     width: 60px;
@@ -80,7 +82,7 @@ nav {
     margin: 15px 2px;
     background-color: rgba(255, 0, 0, 0);
     color: rgb(0, 0, 0);
-    font-size: 15px;
+    font-size: var(--font-size);
     font-weight: bolder;
     cursor: pointer;
     transition: 0.5s;
@@ -91,7 +93,7 @@ nav {
     color: white;
 }
 
-/* Timer formats: */
+/* Timer Formats: */
 .timer {
     display: flex;
     align-items: center;
@@ -113,8 +115,6 @@ nav {
 
 .timer_icons {
     background-color: rgba(255, 255, 255, 0);
-    /* width: 160px; */
-    /* height: 60px; */
     padding: 10px;
     border: none;
     margin-top: 20px;
@@ -125,71 +125,22 @@ nav {
 .timer_icons:hover {
     transform: scale(1.2);
 }
+span {
+    cursor: pointer;
+}
 
+/* Icons Formats Width and height: */
 img {
     width: var(--img);
     height: var(--img);
 }
 
-.onclick_class {
-    color: white;
-}
-
 .clickType {
-    color: white;
+    color: rgba(255, 255, 255, 0.835);
 }
 
-@media (max-width: 450px) {
-    :root {
-        --padding: 10px;
-        --font-size: 10px;
-        --img: 30px;
-    }
-    .timer_type {
-        width: 90%;
-        height: 50px;
-        display: flex;
-        transform: translateX(-50%);
-        justify-content: center;
-        position: fixed;
-        left: 50%;
-        bottom: 20px;
-    }
-    .type {
-        font-size: 10px;
-        padding: 5px;
-    }
-    nav {
-        display: flex;
-        flex-direction: row;
-        transform: translateX(-50%);
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        height: 50px;
-        position: fixed;
-        left: 50%;
-        top: 10px;
-        padding: 1px;
-    }
-    .navType {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 2px;
-        font-size: 5px;
-    }
-    .timer {
-        width: fit-content;
-        gap: 5px;
-        font-size: 70px;
-    }
-    .timer_icons {
-        padding: 2px;
-        margin-top: 2px;
-    }
-}
+/* Phone Formats: */
+
 @media (max-width: 768px) {
     :root {
         --padding: 10px;
@@ -246,6 +197,57 @@ img {
         margin-top: 10px;
     }
 }
+@media (max-width: 450px) {
+    :root {
+        --padding: 10px;
+        --font-size: 10px;
+        --img: 30px;
+    }
+    .timer_type {
+        width: 90%;
+        height: 50px;
+        display: flex;
+        transform: translateX(-50%);
+        justify-content: center;
+        position: fixed;
+        left: 50%;
+        bottom: 20px;
+    }
+    .type {
+        font-size: 10px;
+        padding: 5px;
+    }
+    nav {
+        display: flex;
+        flex-direction: row;
+        transform: translateX(-50%);
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 50px;
+        position: fixed;
+        left: 50%;
+        top: 10px;
+        padding: 1px;
+    }
+    .navType {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 2px;
+        font-size: 5px;
+    }
+    .timer {
+        width: fit-content;
+        gap: 5px;
+        font-size: 70px;
+    }
+    .timer_icons {
+        padding: 2px;
+        margin-top: 2px;
+    }
+}
 
 @media (max-width: 380px) {
     .timer {
@@ -254,59 +256,5 @@ img {
 
     .type {
         font-size: 10px;
-    }
-}
-
-@media (max-height: 500px) and (orientation: landscape) {
-    :root {
-        --img: 26px;
-        --border-radius: 20px;
-    }
-
-    nav {
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        width: 400px;
-        max-width: 80%;
-        height: auto;
-        top: 8px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 2px 5px;
-    }
-
-    .navType {
-        width: auto;
-        height: 36px;
-        margin: 0 4px;
-        font-size: 11px;
-    }
-
-    .navType:hover {
-        transform: none;
-    }
-
-    .timer_type {
-        width: 420px;
-        max-width: 80%;
-        bottom: 8px;
-    }
-
-    .type {
-        font-size: 12px;
-        padding: 8px 4px;
-        margin: 3px 0;
-    }
-
-    .timer {
-        top: 50%;
-        gap: 8px;
-        font-size: 100px;
-    }
-
-    .timer_icons {
-        padding: 4px;
-        margin-top: 0;
     }
 }

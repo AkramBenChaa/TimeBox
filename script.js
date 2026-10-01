@@ -1,3 +1,4 @@
+// Retrieving items:
 let time = document.getElementById("time");
 let types = document.querySelectorAll(".type");
 let pause = document.getElementById("pause");
@@ -6,12 +7,15 @@ let icon = document.getElementById("img");
 let replay = document.getElementById("replay");
 let nav = document.querySelectorAll(".navType");
 
+// Audio Generation:
 let timeTypeSound = new Audio("./sounds/time_type_sound.wav");
 let sound = new Audio("./sounds/time_end_sound.mp3");
-let clickSound = new Audio("./sounds/click_sound (2).wav");
+let clickSound = new Audio("./sounds/click_sound.wav");
 let rain = new Audio("./sounds/rain_sound.mp3");
 let fire = new Audio("./sounds/fire_sound.mp3");
+let Forest = new Audio("./sounds/Forest_sound.mp3");
 
+// Basic variables:
 let start = false;
 let numberOfSound = 1;
 let thisType = focus;
@@ -19,14 +23,16 @@ let totalSeconds = 25 * 60;
 let timer;
 let endTime;
 let startTime;
-let imageNumber = 1;
+let imageNumber = 8;
 
 // Display Time:
 function updateDislpay() {
     let hours = Math.floor(totalSeconds / 3600);
     let minutes = Math.floor((totalSeconds % 3600) / 60);
     let seconds = totalSeconds % 60;
+
     if (thisType.dataset.time === "00") {
+        // For Stopwatch
         time.textContent =
             String(hours).padStart(2, "0") +
             ":" +
@@ -34,6 +40,7 @@ function updateDislpay() {
             ":" +
             String(seconds).padStart(2, "0");
     } else {
+        // For other times
         time.textContent = String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
     }
 }
@@ -41,7 +48,6 @@ function updateDislpay() {
 // Change Time Type In Display:
 types.forEach(function (type) {
     type.addEventListener("click", function () {
-        // type.className.remove = "clickType";
         timeTypeSound.play();
         timeTypeSound.currentTime = 0;
         clearInterval(timer);
@@ -49,10 +55,11 @@ types.forEach(function (type) {
         thisType = type;
         start = false;
         icon.src = "./icons/play_icon.png";
+        // Change The Color Of The Selected Time:
         types.forEach(function (type) {
             type.classList.remove("clickType");
         });
-        type.classList.toggle("clickType");
+        type.classList.add("clickType");
         updateDislpay();
     });
 });
@@ -133,10 +140,6 @@ nav.forEach(function (item) {
             case "btn-ai":
                 aiButton();
                 break;
-
-            default:
-                console.log("خيار غير معروف");
-                break;
         }
     });
 });
@@ -170,6 +173,13 @@ function startSound() {
             break;
         case 3:
             fire.pause();
+            Forest.currentTime = 0;
+            Forest.loop = true;
+            Forest.play();
+            numberOfSound++;
+            break;
+        case 4:
+            Forest.pause();
             numberOfSound = 1;
             break;
     }
@@ -204,3 +214,8 @@ function noteButton() {
         confirmButtonText: "OK",
     });
 }
+
+// Change Color:
+time.addEventListener("click", function () {
+    time.classList.toggle("clickType");
+});
